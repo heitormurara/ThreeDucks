@@ -33,6 +33,8 @@
 import SwiftUI
 
 struct CardGridView: View {
+  @EnvironmentObject var store: ThreeDucksStore
+  
   var cards: [Card]
   private let columns = [
     GridItem(.fixed(100)),
@@ -44,8 +46,12 @@ struct CardGridView: View {
       ForEach(cards) { card in
         CardView(card: card)
           .frame(width: nil, height: 80)
+          .onTapGesture {
+            store.dispatch(.flipCard(card.id))
+          }
       }
     }
+    .animation(.default)
   }
 }
 
