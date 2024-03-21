@@ -33,42 +33,24 @@
 import Foundation
 import Combine
 
-typealias ThreeDucksStore = Store<ThreeDucksState, ThreeDucksAction>
-
-class Store<State, Action>: ObservableObject {
-  @Published private(set) var state: State
-  
-  private let reducer: Reducer<State, Action>
-  private let middlewares: [Middleware<State, Action>]
-  private var subscriptions: Set<AnyCancellable> = []
-  
-  private let queue = DispatchQueue(label: "com.raywenderlich.ThreeDucks.store", qos: .userInitiated)
-  
-  init(initial: State,
-       reducer: @escaping Reducer<State, Action>,
-       middlewares: [Middleware<State, Action>]) {
-    self.state = initial
-    self.reducer = reducer
-    self.middlewares = middlewares
-  }
-  
-  func dispatch(_ action: Action) {
-    queue.sync {
-      self.dispatch(self.state, action)
-    }
-  }
-  
-  private func dispatch(_ currentState: State, _ action: Action) {
-    let newState = reducer(currentState, action)
-    state = newState
+let gameLogic: Middleware<ThreeDucksState, ThreeDucksAction> = { state, action in
+  switch action {
+  case .flipCard:
+    let selectedCards = state.selectedCards
     
-    middlewares.forEach { middleware in
-      let publisher = middleware(newState, action)
-      
-      publisher
-        .receive(on: DispatchQueue.main)
-        .sink(receiveValue: dispatch)
-        .store(in: &subscriptions)
+    if selectedCards.count == 2 {
+      if selectedCards[0].animal == selectedCards[1].animal {
+        return Just(.clearSelectedCards)
+          .eraseToAnyPublisher()
+      } else {
+        return Just(.unflipSelectedCards)
+          .delay(for: 1, scheduler: DispatchQueue.main)
+          .eraseToAnyPublisher()
+      }
     }
+    
+  default: break
   }
+  
+  return Empty().eraseToAnyPublisher()
 }

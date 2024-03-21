@@ -16,6 +16,8 @@
 		1AD571512BABFA52000A5D44 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571502BABFA52000A5D44 /* Store.swift */; };
 		1AD571542BABFB87000A5D44 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571532BABFB87000A5D44 /* Actions.swift */; };
 		1AD571562BABFBE6000A5D44 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571552BABFBE6000A5D44 /* Reducer.swift */; };
+		1AD571582BAC022E000A5D44 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571572BAC022E000A5D44 /* Middleware.swift */; };
+		1AD5715A2BAC027A000A5D44 /* GameLogicMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571592BAC027A000A5D44 /* GameLogicMiddleware.swift */; };
 		49107CC426168FF500E85A59 /* ScorePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107CC326168FF500E85A59 /* ScorePersistence.swift */; };
 		49107CCA26171D0100E85A59 /* QuackPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107CC926171D0100E85A59 /* QuackPlayer.swift */; };
 		495CB6482610424F00DC9D44 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CB6472610424F00DC9D44 /* GameState.swift */; };
@@ -45,6 +47,8 @@
 		1AD571502BABFA52000A5D44 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1AD571532BABFB87000A5D44 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		1AD571552BABFBE6000A5D44 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		1AD571572BAC022E000A5D44 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		1AD571592BAC027A000A5D44 /* GameLogicMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicMiddleware.swift; sourceTree = "<group>"; };
 		49107CC326168FF500E85A59 /* ScorePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePersistence.swift; sourceTree = "<group>"; };
 		49107CC926171D0100E85A59 /* QuackPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackPlayer.swift; sourceTree = "<group>"; };
 		495CB6472610424F00DC9D44 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				1AD571502BABFA52000A5D44 /* Store.swift */,
 				1AD571532BABFB87000A5D44 /* Actions.swift */,
 				1AD571552BABFBE6000A5D44 /* Reducer.swift */,
+				1AD571572BAC022E000A5D44 /* Middleware.swift */,
+				1AD571592BAC027A000A5D44 /* GameLogicMiddleware.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 				1AD571512BABFA52000A5D44 /* Store.swift in Sources */,
 				499C708D260C202F00BE1486 /* TitleScreenView.swift in Sources */,
 				495CB6482610424F00DC9D44 /* GameState.swift in Sources */,
+				1AD571582BAC022E000A5D44 /* Middleware.swift in Sources */,
 				49107CCA26171D0100E85A59 /* QuackPlayer.swift in Sources */,
+				1AD5715A2BAC027A000A5D44 /* GameLogicMiddleware.swift in Sources */,
 				1AD571542BABFB87000A5D44 /* Actions.swift in Sources */,
 				49D3F03426183D45004D49D3 /* CardGridView.swift in Sources */,
 				4978903F2613374D00A5E9B8 /* GameWinScreenView.swift in Sources */,

@@ -78,6 +78,20 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction> = { state, act
     mutatingState.cards = cards
     
     mutatingState.moves += 1
+    
+  case .clearSelectedCards:
+    mutatingState.selectedCards = []
+    
+  case .unflipSelectedCards:
+    let selectedIDs = mutatingState.selectedCards.map { $0.id }
+    
+    let cards: [Card] = mutatingState.cards.map { card in
+      guard selectedIDs.contains(card.id) else { return card }
+      return Card(id: card.id, animal: card.animal, isFlipped: false)
+    }
+    
+    mutatingState.selectedCards = []
+    mutatingState.cards = cards
   }
   
   return mutatingState

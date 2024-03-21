@@ -39,7 +39,8 @@ struct AppMain: App {
       ContentView()
         .environmentObject(ThreeDucksStore(
           initial: ThreeDucksState(),
-          reducer: threeDucksReducer))
+          reducer: threeDucksReducer,
+          middlewares: [gameLogic]))
     }
   }
 }
