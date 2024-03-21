@@ -33,6 +33,8 @@
 import SwiftUI
 
 struct TitleScreenView: View {
+  @EnvironmentObject var store: ThreeDucksStore
+  
   var body: some View {
     VStack(alignment: .center, spacing: 32) {
       Spacer()
@@ -41,7 +43,9 @@ struct TitleScreenView: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
       Button("New Game") {
-        // action
+        withAnimation {
+          store.dispatch(.startGame)
+        }
       }
       .font(.headline)
       .foregroundColor(.white)

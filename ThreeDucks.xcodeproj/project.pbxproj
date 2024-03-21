@@ -12,6 +12,10 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		1AD5714F2BABF9F7000A5D44 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5714E2BABF9F7000A5D44 /* State.swift */; };
+		1AD571512BABFA52000A5D44 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571502BABFA52000A5D44 /* Store.swift */; };
+		1AD571542BABFB87000A5D44 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571532BABFB87000A5D44 /* Actions.swift */; };
+		1AD571562BABFBE6000A5D44 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD571552BABFBE6000A5D44 /* Reducer.swift */; };
 		49107CC426168FF500E85A59 /* ScorePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107CC326168FF500E85A59 /* ScorePersistence.swift */; };
 		49107CCA26171D0100E85A59 /* QuackPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107CC926171D0100E85A59 /* QuackPlayer.swift */; };
 		495CB6482610424F00DC9D44 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CB6472610424F00DC9D44 /* GameState.swift */; };
@@ -37,6 +41,10 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AD5714E2BABF9F7000A5D44 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		1AD571502BABFA52000A5D44 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		1AD571532BABFB87000A5D44 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		1AD571552BABFBE6000A5D44 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		49107CC326168FF500E85A59 /* ScorePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePersistence.swift; sourceTree = "<group>"; };
 		49107CC926171D0100E85A59 /* QuackPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackPlayer.swift; sourceTree = "<group>"; };
 		495CB6472610424F00DC9D44 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
+				1AD571522BABFB7A000A5D44 /* State */,
 				49FFE1C22608A713009F2416 /* Model */,
 				49FFE1C12608A70C009F2416 /* Views */,
 				49107CCD26171FB400E85A59 /* Assets */,
@@ -103,6 +112,17 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1AD571522BABFB7A000A5D44 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				1AD5714E2BABF9F7000A5D44 /* State.swift */,
+				1AD571502BABFA52000A5D44 /* Store.swift */,
+				1AD571532BABFB87000A5D44 /* Actions.swift */,
+				1AD571552BABFBE6000A5D44 /* Reducer.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		49107CCD26171FB400E85A59 /* Assets */ = {
@@ -239,9 +259,11 @@
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				49FFE1BC2608A064009F2416 /* CardFrontContentView.swift in Sources */,
 				49FFE1C42608A74E009F2416 /* Card.swift in Sources */,
+				1AD571512BABFA52000A5D44 /* Store.swift in Sources */,
 				499C708D260C202F00BE1486 /* TitleScreenView.swift in Sources */,
 				495CB6482610424F00DC9D44 /* GameState.swift in Sources */,
 				49107CCA26171D0100E85A59 /* QuackPlayer.swift in Sources */,
+				1AD571542BABFB87000A5D44 /* Actions.swift in Sources */,
 				49D3F03426183D45004D49D3 /* CardGridView.swift in Sources */,
 				4978903F2613374D00A5E9B8 /* GameWinScreenView.swift in Sources */,
 				49FFE1BF2608A622009F2416 /* GameScreenView.swift in Sources */,
@@ -249,8 +271,10 @@
 				49FFE1B92608A057009F2416 /* CardBackContentView.swift in Sources */,
 				49FFE1B626089E8E009F2416 /* CardView.swift in Sources */,
 				49DFE83D261540EF00E9C3CF /* Score.swift in Sources */,
+				1AD5714F2BABF9F7000A5D44 /* State.swift in Sources */,
 				49107CC426168FF500E85A59 /* ScorePersistence.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
+				1AD571562BABFBE6000A5D44 /* Reducer.swift in Sources */,
 				49DC5FEE260F237400D17454 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
