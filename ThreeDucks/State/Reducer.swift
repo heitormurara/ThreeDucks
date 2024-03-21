@@ -40,6 +40,21 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction> = { state, act
   switch action {
   case .startGame:
     mutatingState.gameState = .started
+    
+    mutatingState.cards = [
+      Card(animal: .bat),
+      Card(animal: .bat),
+      Card(animal: .ducks),
+      Card(animal: .ducks),
+      Card(animal: .bear),
+      Card(animal: .bear),
+      Card(animal: .pelican),
+      Card(animal: .pelican),
+      Card(animal: .horse),
+      Card(animal: .horse),
+      Card(animal: .elephant),
+      Card(animal: .elephant)
+    ].shuffled()
   case .endGame:
     mutatingState.gameState = .title
   }
